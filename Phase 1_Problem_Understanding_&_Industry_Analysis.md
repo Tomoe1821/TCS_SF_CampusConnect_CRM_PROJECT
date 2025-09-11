@@ -25,6 +25,7 @@ Implement a Salesforce CRM that:
 - Automates event registration and reminders.  
 - Tracks attendance and generates participation history.  
 - Provides dashboards for real-time engagement analytics.  
+- Introduces smart, innovative, and gamified experiences for students.  
 
 ---
 
@@ -35,13 +36,16 @@ Implement a Salesforce CRM that:
 - Automated registration and event reminders.  
 - Streamlined attendance & feedback tracking.  
 - Dashboards for faculty and coordinators to monitor student engagement.  
+- Innovative features like mood-based recommendations, NFT badges, and dynamic pricing to make events more engaging.  
 
 ### Functional Requirements  
-- **Student Object:** Capture student details (Year, Branch, Skills).  
-- **Event Object:** Fields for Event Name, Date, Venue, Capacity, Club.  
+- **Student Object:** Capture student details (Year, Branch, Skills, Mood).  
+- **Event Object:** Fields for Event Name, Date, Venue, Capacity, Club, Pricing Tier.  
 - **Event Registration Object:** Links Students to Events.  
 - **Automation:** Email/SMS reminders before event day.  
 - **Reports:** Participation trends, event attendance, club performance.  
+- **Friend-Match Logic:** Suggests events based on friends’ participation.  
+- **NFT Badges:** Auto-generated collectibles for attended events.  
 
 ### Non-Functional Requirements  
 - Mobile-friendly (via Salesforce Mobile App).  
@@ -55,10 +59,10 @@ Implement a Salesforce CRM that:
 
 | Stakeholder   | Needs / Responsibilities |
 |---------------|---------------------------|
-| Students      | Register for events, receive reminders, view their participation history. |
-| Club Leaders  | Create/manage events, track registrations, view attendance, send updates. |
-| Faculty       | Oversee multiple clubs, approve budgets, track student engagement. |
-| Admin         | Setup org, users, profiles, roles, permissions, and data security. |
+| Students      | Register for events, receive reminders, view participation history, collect NFT badges, get event suggestions. |
+| Club Leaders  | Create/manage events, track registrations, configure pricing tiers, issue NFT badges, view attendance. |
+| Faculty       | Oversee multiple clubs, approve budgets, track student engagement, review reports. |
+| Admin         | Setup org, users, profiles, roles, permissions, and manage data security. |
 
 ---
 
@@ -76,21 +80,41 @@ Implement a Salesforce CRM that:
 2. Auto-confirmation email/SMS sent to the student.  
 3. Salesforce Flow sends reminders 1 day before the event.  
 4. Attendance tracked digitally using custom objects.  
-5. Participation history available in Student Profile.  
-6. Dashboards auto-refresh for real-time engagement insights.  
+5. Participation history + NFT badges shown in Student Profile.  
+6. Mood + Friend-Match engine suggests events in real time.  
+7. Dynamic pricing automatically adjusts fees based on registration count.  
+8. Dashboards auto-refresh for real-time engagement insights.  
 
 ---
 
 ## Industry-Specific Use Cases  
-- **Student Engagement Leaderboard:** Ranking based on event participation.  
-- **Automated Certificates:** Generated after successful attendance.  
-- **Budget Approval Workflow:** Faculty approves club event budgets via Approval Process.  
-- **Multi-Club Membership Management:** Students can belong to multiple clubs simultaneously.  
+
+- **Mood-Based Event Suggestions:** Students update their mood (Happy, Stressed, Curious) → Salesforce recommends matching events (Yoga for stressed, Hackathon for curious, Fest for excited).  
+- **Smart Friend-Match:** When registering, system suggests events that friends or classmates are also attending → boosting participation.  
+- **Dynamic Pricing / Early Bird Discounts:** First 20 signups free, next 30 at discounted price, last batch at full price → auto-managed in Salesforce.  
+- **Event NFTs / Digital Collectibles:** Students receive unique NFT badges after attending events. Collecting milestones unlocks rewards like “Campus Influencer.”  
+- **Student Engagement Leaderboard:** Rankings based on event participation, mood badges, and NFT collections.  
+- **Automated Certificates:** Issued digitally after successful attendance.  
+- **Budget Approval Workflow:** Faculty reviews & approves club event budgets via Salesforce Approval Process.  
+- **Multi-Club Membership Management:** Students can belong to multiple clubs at once with participation history tracked.  
 
 ---
 
 ## AppExchange Exploration  
+
 - **Eventbrite Sync** → Seamless event registration integration.  
 - **FormAssembly** → Custom student registration forms.  
-- **SurveyMonkey** → Event feedback collection surveys.  
+- **SurveyMonkey** → Event feedback surveys.  
 - **Conga Composer** → Auto-generate participation certificates.  
+- **Blockchain/NFT API Integration** → Event NFT badge distribution.  
+
+---
+
+## Phase 1 Summary  
+
+- Problem statement clarified.  
+- Requirements (business, functional, non-functional) documented.  
+- Stakeholders identified with responsibilities.  
+- Current vs Proposed process mapped.  
+- Real-world education-specific + innovative use cases listed.  
+- Relevant AppExchange tools explored for faster implementation.  
