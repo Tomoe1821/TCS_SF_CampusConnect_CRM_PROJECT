@@ -2,7 +2,7 @@
 
 ## Phase 1: Problem Understanding & Industry Analysis  
 
-** Industry:** Education (Campus Clubs & Events)  
+**Industry:** Education (Campus Clubs & Events)  
 **Project Type:** Salesforce CRM Implementation (Admin + Developer)  
 **Target Users:** Students, Club Leaders, Faculty Coordinators, Admin  
 
