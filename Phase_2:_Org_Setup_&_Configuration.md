@@ -1,148 +1,94 @@
-# Phase 2: Org Setup & Configuration (Campus CRM + Student Club)
-
-## 1. Salesforce Editions
-
-* Use a **Developer Edition (Free Dev Org)**.
-* Developer Org gives you:
-
-  * 2 licenses (Admin + 1 User).
-  * Full access to Objects, Apex, Flows, LWC.
-  * Sufficient for Campus CRM prototype.
+# Phase 2: Org Setup & Configuration  
+**Project:** CampusConnect CRM – Student Club & Event Management System  
 
 ---
 
-## 2. Company Profile Setup
-
-* Setup → **Company Information**.
-* Example details:
-
-  * Company Name: *CampusConnect CRM*
-  * Address: *University Campus, Jabalpur, MP*
-  * Currency: *INR*
-  * Default Time Zone: *Asia/Kolkata (IST)*
+## Salesforce Edition
+- Developer Edition Org utilized for implementation.
 
 ---
 
-## 3. Business Hours & Holidays
-
-* Setup → **Business Hours** → New:
-
-  * Name: *Campus Office Hours*
-  * Monday–Saturday: 9 AM – 8 PM IST
-* Setup → **Holidays** → Add University holidays (Diwali, Republic Day, Annual Fest Week).
-
-***Automations like event reminders & mood-based suggestions can reference this.***
+## Company Profile Setup
+- Company Name: *CampusConnect CRM*  
+- Currency: *INR*  
+- Time Zone: *Asia/Kolkata (IST)*  
+- Address and contact details configured.
 
 ---
 
-## 4. Fiscal Year Settings
-
-* Setup → **Fiscal Year**.
-* Use **Standard Fiscal Year (April–March)** for academic cycle.
-* If needed → Custom Fiscal Year to align with *Semester-based sessions*.
+## Business Hours & Holidays
+- Standard business hours: *Monday–Friday, 9 AM – 6 PM IST*.  
+- Holidays configured: *Diwali, Christmas, Independence Day, and major academic holidays*.
 
 ---
 
-## 5. User Setup & Licenses
-
-* Create 3–4 test users:
-
-  1. **Admin (You)** – System Administrator.
-  2. **Faculty Advisor** – Standard User.
-  3. **Student Leader (Club Head)** – Custom profile with event management access.
-  4. **Student Member** – Basic student access, can register for events.
-
-***Helps demo different roles.***
+## Fiscal Year Settings
+- Standard Fiscal Year: *April – March*.
 
 ---
 
-## 6. Profiles
-
-* Profiles define what users can do.
-* Example Profiles:
-
-  * **System Administrator** → Full access.
-  * **Faculty Profile** → Can monitor clubs & approve events.
-  * **Club Leader Profile** → Can create/manage student events.
-  * **Student Profile** → Can view & register for events only.
+## User Setup & Licenses
+- **System Administrator (Admin User)**  
+- **Faculty Coordinator User**  
+- **Club Leader User**  
+- **Student User**
 
 ---
 
-## 7. Roles
-
-* Roles define **data visibility hierarchy**.
-
-  * Admin (Top)
-
-    * Faculty Advisor
-
-      * Club Leader
-
-        * Student Member
-
-***Role hierarchy ensures leaders can track their members’ participation.***
+## Profiles
+- **System Administrator** (default).  
+- **Faculty Profile** (customized from Standard User).  
+- **Club Leader Profile** (customized for event management).  
+- **Student Profile** (customized with limited access).
 
 ---
 
-## 8. Permission Sets
-
-* Create **extra permissions** beyond profiles.
-
-  * *“Mood Event Dashboard Access”* → For students to see mood-based event suggestions.
-  * *“Event Analytics Access”* → For faculty & club leaders to track participation.
-
----
-
-## 9. OWD (Organization-Wide Defaults)
-
-* Setup → Sharing Settings.
-* Suggested defaults:
-
-  * **Students** → Private.
-  * **Events** → Public Read Only (anyone can see events).
-  * **Mood Updates** → Private (confidential to student + admin).
-  * **Club Data** → Controlled by Parent (Club Leader → Members).
+## Roles
+- **Admin**  
+  - **Faculty Coordinator**  
+    - **Club Leader**  
+      - **Student**
 
 ---
 
-## 10. Sharing Rules
-
-* Add sharing for collaboration:
-
-  * Faculty can see all club events.
-  * Club Leaders can see all student registrations for their club.
-  * Students can only see **their own registrations**.
+## Permission Sets
+- *Student Dashboard Access*  
+- *Club Leader Event Management*  
+- *Faculty Advanced Reporting*
 
 ---
 
-## 11. Login Access Policies
-
-* Setup → **Login Access Policies**.
-* Allow users to grant temporary access to Admin for troubleshooting.
-
----
-
-## 12. Dev Org Setup
-
-* Stick to **Developer Org**.
-* Optional: Use **Scratch Orgs (SFDX)** if showcasing DevOps.
+## Organization-Wide Defaults (OWD)
+- **Student Records**: Private  
+- **Event Registrations**: Private  
+- **Clubs & Events**: Public Read Only  
+- **Participation History**: Controlled by Parent  
 
 ---
 
-## 13. Sandbox Usage
-
-* Not available in free Dev Org.
-* Can simulate by creating a **second Dev Org** as “Sandbox.”
+## Sharing Rules
+- Faculty can access data of all clubs.  
+- Club Leaders can view student registrations for their events.  
+- Students restricted to their own event registrations and profiles.  
 
 ---
 
-## 14. Deployment Basics
+## Login Access Policies
+- Enabled for troubleshooting and admin support.
 
-* Use **Change Sets** for moving customizations.
-* Steps:
+---
 
-  1. Create Outbound Change Set (Dev Org).
-  2. Upload to another Org (Sandbox Demo Org).
-  3. Deploy.
+## Dev Org Setup
+- Developer Org created and configured for the project.
 
+---
 
+## Sandbox Usage
+- Not applicable (*Developer Edition*).  
+- Simulated via secondary Developer Org if required.
+
+---
+
+## Deployment Basics
+- Change Sets identified as the primary deployment method.  
+- Awareness of ANT Migration Tool and SFDX for advanced deployments.
