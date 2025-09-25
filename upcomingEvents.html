@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Upcoming Events">
+        <div class="slds-p-around_medium">
+            <template if:true={events}>
+                <ul class="slds-list_vertical slds-has-dividers">
+                    <template for:each={events} for:item="evt">
+                        <li key={evt.Id} class="slds-item">
+                            <p class="slds-text-heading_small">{evt.Name}</p>
+                            <p>{formatDate(evt.Event_DateTime__c)} • {evt.Venue__c}</p>
+                            <p>Status: {evt.Status__c}</p>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <template if:true={isEmpty}>
+                <p>No upcoming events found.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
